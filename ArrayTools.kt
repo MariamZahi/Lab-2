@@ -36,38 +36,39 @@ fun arrayContains(inputArray: Array<Int>, target: Int): Boolean {
             return true
         }
     }
-        return false
+    return false
+}
+
+// Reversed Array
+// Usage of ArrayDeque needs OptIn (will get back to it later 11/06)
+fun reverseArray() {
+    val array: IntArray = intArrayOf(1, 2, 3, 4, 5)
+
+    for (i in array.reversed()) {
+        println(i)
+    }
+}
+// Simplified because stack needs OptIn
+
+// CaeserCypher
+fun encryptStrings(vararg strings: String): List<String> {
+    val encryptedStrings = mutableListOf<String>() // to hold string values
+
+    for (string in strings) {
+        val encryptedText = StringBuilder()
+
+        for (char in string) {
+            // encrypting the value by giving value next to original
+            // Cannot use char.toInt as it was incompatible
+            val encryptedChar = (char + 1).toChar()
+            // use this stringbuilder append to join together strings and int
+            encryptedText.append(encryptedChar as Any)
+        }
+
+        encryptedStrings.add(encryptedText.toString())
     }
 
+    return encryptedStrings
+}
 
-    //Reversed Array
-    //Usage of ArrayDeque needs OptIn (will get back to it later 11/06)
-    fun reverseArray() {
-        val array: IntArray = intArrayOf(1, 2, 3, 4, 5)
-     
-        for (i in array.reversed()) {
-            println(i)
-        }
-    }
-    //Simplified because stack needs OptIn
-   
-    //CaeserCypher
-    fun encryptStrings(vararg strings: String): List<String> {
-        val encryptedStrings = mutableListOf<String>() // to hold string values
-        
-        for (string in strings) {
-            val encryptedText = StringBuilder()
-            
-            for (char in string) {
-                // encrypting the value by giving value next to original
-                //Cannot use char.code as it was incompatible
-                val encryptedChar = (char.code + 1).toChar()  
-               //use this stringbuilder append to join together strings and int
-                encryptedText.append(encryptedChar as Any)
-            }
-            
-            encryptedStrings.add(encryptedText.toString())
-        }
-        
-        return encryptedStrings
-    }
+
