@@ -1,6 +1,7 @@
+//Omitting fun main gives main.jar error
 fun main(){
     averageArrayTester()
-    print(arrayContains(arrayOf(1,2,3),2))
+    print(averageArray(arrayOf(1,2,3)))
 }
 // Averaging the integer Array
 // Double gives output in decimals
@@ -23,13 +24,7 @@ fun averageArrayTester() {
     print(averageArray(arrayOf(-1, -2, -3)))
     print(averageArray(arrayOf(-1605)))
     print(averageArray(arrayOf(99, 10)))
+    print(averageArray(arrayOf()))
 }
 
-fun arrayContains(inputArray: Array<Int>, target: Int): Boolean {
-    for (element in inputArray) {
-        if (element == target) {
-            return true
-        }
-    }
-    return false
-}
+
