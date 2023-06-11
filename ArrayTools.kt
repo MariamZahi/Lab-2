@@ -41,6 +41,7 @@ fun arrayContains(inputArray: Array<Int>, target: Int): Boolean {
 
 
     //Reversed Array
+    //Usage of ArrayDeque needs OptIn (will get back to it later 11/06)
     fun reverseArray() {
         val array: IntArray = intArrayOf(1, 2, 3, 4, 5)
      
@@ -48,17 +49,21 @@ fun arrayContains(inputArray: Array<Int>, target: Int): Boolean {
             println(i)
         }
     }
+    //Simplified because stack needs OptIn
    
     //CaeserCypher
     fun encryptStrings(vararg strings: String): List<String> {
-        val encryptedStrings = mutableListOf<String>()
+        val encryptedStrings = mutableListOf<String>() // to hold string values
         
         for (string in strings) {
             val encryptedText = StringBuilder()
             
             for (char in string) {
-                val encryptedChar = (char.code + 1).toChar()
-                encryptedText.append(encryptedChar)
+                // encrypting the value by giving value next to original
+                //Cannot use char.code as it was incompatible
+                val encryptedChar = (char.code + 1).toChar()  
+               //use this stringbuilder append to join together strings and int
+                encryptedText.append(encryptedChar as Any)
             }
             
             encryptedStrings.add(encryptedText.toString())
