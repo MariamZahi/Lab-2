@@ -20,11 +20,11 @@ fun averageArray(inputArray: Array<Int>): Double {
 }
 //Testing the method
 fun averageArrayTester() {
-    print(averageArray(arrayOf(1, 2, 3)))
-    print(averageArray(arrayOf(-1, -2, -3)))
-    print(averageArray(arrayOf(-1605)))
-    print(averageArray(arrayOf(99, 10)))
-    print(averageArray(arrayOf()))
+    println(averageArray(arrayOf(1, 2, 3)))
+    println(averageArray(arrayOf(-1, -2, -3)))
+    println(averageArray(arrayOf(-1605)))
+    println(averageArray(arrayOf(99, 10)))
+    println(averageArray(arrayOf()))
 }
 
 
